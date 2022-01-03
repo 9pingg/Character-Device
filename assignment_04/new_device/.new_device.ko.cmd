@@ -1,0 +1,1 @@
+cmd_/home/kern/os/new_device/new_device.ko := ld -r -m elf_x86_64 --build-id=sha1  -T scripts/module.lds -o /home/kern/os/new_device/new_device.ko /home/kern/os/new_device/new_device.o /home/kern/os/new_device/new_device.mod.o;  true

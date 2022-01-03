@@ -2,23 +2,19 @@
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/fs.h>
+#include <linux/rtc.h>
+#include <linux/sched.h>
 #include <asm/uaccess.h>
 #include <linux/slab.h>
 #include <linux/semaphore.h>
 #include <linux/init.h>
 #include <linux/miscdevice.h>
 #include <linux/platform_device.h>
-#include <linux/rtc.h>
-#include <linux/sched.h>
 
 
-// #define AUTHOR "A"
-// #define DESCRIPTION "MY CHARACTER DEVICE"
 #define LICENSE "GPL"
 
 MODULE_LICENSE(LICENSE);
-// MODULE_AUTHOR(AUTHOR);
-// MODULE_DESCRIPTION(DESCRIPTION);
 
 static struct miscdevice my_device;
 static struct semaphore full;

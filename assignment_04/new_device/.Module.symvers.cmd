@@ -1,1 +1,1 @@
-cmd_/home/kern/os/new_device/Module.symvers := sed 's/\.ko$$/\.o/' /home/kern/os/new_device/modules.order | scripts/mod/modpost  -a  -o /home/kern/os/new_device/Module.symvers -e -i Module.symvers  -N -T -
+cmd_/home/kern/project_os/assignment_04/new_device/Module.symvers := sed 's/\.ko$$/\.o/' /home/kern/project_os/assignment_04/new_device/modules.order | scripts/mod/modpost  -a  -o /home/kern/project_os/assignment_04/new_device/Module.symvers -e -i Module.symvers  -N -T -

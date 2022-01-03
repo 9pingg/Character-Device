@@ -11,10 +11,6 @@ int main(void){
         perror("open");
         exit(1);
     }
-    // int fd1 = open("/dev/new_device", O_WRONLY);
-    //     if(fd1 < 0){
-    //         perror("device open");
-    //     }
     char random_str[8];
     while(1){
         ssize_t res = read(fd, random_str, 8);
@@ -22,8 +18,6 @@ int main(void){
             perror("read");
             exit(1);    
         }
-        
-        //int result = write(fd1, random_str, 8);
         int result = syscall(WRITER_SYSCALL_NO, random_str, BYTE_COUNT);
         if(result < 0){
             perror("syscall");
@@ -36,6 +30,5 @@ int main(void){
         sleep(2);
     }
     close(fd);
-    //close(fd1);
     return 0;
 }

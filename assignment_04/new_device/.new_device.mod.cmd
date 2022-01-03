@@ -1,1 +1,1 @@
-cmd_/home/kern/os/new_device/new_device.mod := { echo  /home/kern/os/new_device/new_device.o;  echo; } > /home/kern/os/new_device/new_device.mod
+cmd_/home/kern/project_os/assignment_04/new_device/new_device.mod := { echo  /home/kern/project_os/assignment_04/new_device/new_device.o;  echo; } > /home/kern/project_os/assignment_04/new_device/new_device.mod

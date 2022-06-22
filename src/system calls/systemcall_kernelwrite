@@ -1,0 +1,32 @@
++SYSCALL_DEFINE2(kernel_device_writer, char __user *, write_buffer, int, len_buffer)
++{
++	//char buf[8];
++	struct file * fp;     
++	//mm_segment_t fs;     
++	loff_t pos;   
++	// int fd = ksys_open("/dev/new_device", O_WRONLY);
++    // if(fd== -1){
++	// 	printk("writer open error");
++	// 	return -EFAULT;
++	// }
++	fp = filp_open("/dev/new_device", O_WRONLY , 0777);   
++	if (IS_ERR (fp)) {         
++		printk ("file error\n");         
++		return -EFAULT;     
++	}
++	// long bytes_copied = strncpy_from_user(buf, write_buffer, len_buffer);
++	// if(bytes_copied < 0){
++	// 	printk("strcpy writer error");
++	// 	return -EFAULT;
++	// }
++	pos = 0;     
++	ssize_t result = vfs_write (fp, write_buffer, sizeof (write_buffer), & pos);     
++	//int result = ksys_write(fd, buf, len_buffer);
++	if(result < 0){
++		printk("write error");
++		return -EFAULT;
++	}
++	//ksys_close(fd);
++	filp_close (fp, NULL);     
++	return 0;
++}
